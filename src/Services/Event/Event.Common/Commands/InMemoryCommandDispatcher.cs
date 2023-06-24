@@ -15,7 +15,7 @@ namespace Event.Common.Abstractions.Commands
         {
             using (var scope = serviceProvider.CreateScope())
             {
-                var handler = scope.ServiceProvider.GetService<ICommandHandler<TCommand>>();
+                var handler = scope.ServiceProvider.GetRequiredService<ICommandHandler<TCommand>>();
 
                 await handler.HandleAsync(command);
             }
