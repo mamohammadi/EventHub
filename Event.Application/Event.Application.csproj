@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Factories\" />
-    <Folder Include="Services\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Queries\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Event.Common\Event.Common.csproj" />
+    <ProjectReference Include="..\Event.Domain\Event.Domain.csproj" />
   </ItemGroup>
 
 </Project>
