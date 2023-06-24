@@ -1,11 +1,13 @@
 # EventHub "Event Management Platform"
 
+ * .Net 7
  * Microservices Architecture
  * DDD
  * Clean Arcitecture
  * CQRS
- * Event-Driven Design
+ * Event-Driven Architecture
  * Message Broker (RabbitMQ)
+ * Docker
 
 Event Service: This microservice handles event creation, management, and retrieval. It allows users to create events, provide event details (such as date, time, location, and description), manage registrations, and provide event-related updates.
 
