@@ -3,7 +3,7 @@
  * .Net 7
  * Microservices Architecture
  * DDD
- * Clean Arcitecture
+ * Clean Architecture
  * CQRS
  * Event-Driven Architecture
  * Message Broker (RabbitMQ)
