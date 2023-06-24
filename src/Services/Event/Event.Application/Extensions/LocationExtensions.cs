@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Application.Extentions
+namespace Event.Application.Extensions
 {
     internal static class LocationWriteModelExtensions
     {

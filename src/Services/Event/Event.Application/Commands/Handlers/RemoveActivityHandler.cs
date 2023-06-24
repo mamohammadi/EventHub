@@ -1,5 +1,5 @@
 ﻿using Event.Application.Exceptions;
-using Event.Application.Extentions;
+using Event.Application.Extensions;
 using Event.Application.Services;
 using Event.Common.Abstractions.Commands;
 using Event.Common.Abstractions.Services;
