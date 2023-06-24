@@ -1,4 +1,4 @@
-﻿using Event.Common.Services;
+﻿using Event.Common.Abstractions.Services;
 using Event.Domain.Events;
 using Event.Domain.Exceptions;
 using Event.Domain.ValueObjects;

@@ -1,5 +1,5 @@
 ﻿using Event.Application.Commands.WriteModels;
-using Event.Common.Commands;
+using Event.Common.Abstractions.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Event.Common\Event.Common.csproj" />
+    <ProjectReference Include="..\Event.Common.Abstractions\Event.Common.Abstractions.csproj" />
+    <ProjectReference Include="..\Event.Common\Event.Common.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

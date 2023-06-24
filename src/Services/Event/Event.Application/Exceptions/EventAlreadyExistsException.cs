@@ -1,5 +1,5 @@
 ﻿using Event.Common.Exceptions;
-using Event.Common.Services;
+using Event.Common.Abstractions.Services;
 using Event.Domain.Exceptions;
 using System;
 using System.Collections.Generic;

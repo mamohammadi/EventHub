@@ -1,7 +1,8 @@
 ﻿using Event.Application.Exceptions;
 using Event.Application.Extentions;
 using Event.Application.Services;
-using Event.Common.Services;
+using Event.Common.Abstractions.Commands;
+using Event.Common.Abstractions.Services;
 using Event.Domain.Repositories;
 using Event.Domain.ValueObjects;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Event.Application.Commands.Handlers
 {
-    internal sealed class AddActivityHandler : Common.Commands.ICommandHandler<AddActivity>
+    internal sealed class AddActivityHandler : ICommandHandler<AddActivity>
     {
         private readonly IEventRepository eventRepository;
         private readonly ITranslationService translationService;

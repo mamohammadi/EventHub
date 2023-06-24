@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Commands
+namespace Event.Common.Abstractions.Services
 {
-    public interface ICommand
+    public interface ITranslationService
     {
+        public string Translate(string key);
     }
 }
