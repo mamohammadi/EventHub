@@ -1,8 +1,8 @@
 ﻿using Event.Application.Exceptions;
 using Event.Application.Extentions;
 using Event.Application.Services;
+using Event.Common.Commands;
 using Event.Common.Services;
-using Event.Domain;
 using Event.Domain.Factories;
 using Event.Domain.Repositories;
 using Event.Domain.ValueObjects;

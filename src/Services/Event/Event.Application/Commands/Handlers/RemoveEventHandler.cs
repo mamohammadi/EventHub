@@ -1,7 +1,7 @@
 ﻿using Event.Application.Exceptions;
 using Event.Application.Services;
+using Event.Common.Commands;
 using Event.Common.Services;
-using Event.Domain;
 using Event.Domain.Repositories;
 using System;
 using System.Collections.Generic;

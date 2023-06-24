@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Domain
+namespace Event.Common.Commands
 {
     public interface ICommand
     {
