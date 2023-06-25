@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Abstractions.Commands
+namespace Event.Application.Commands.Abstractions
 {
     public interface ICommandDispatcher
     {

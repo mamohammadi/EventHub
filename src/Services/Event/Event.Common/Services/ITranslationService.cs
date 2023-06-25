@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Abstractions.Queries
+namespace Event.Common.Services
 {
-    public interface IQuery
+    public interface ITranslationService
     {
-    }
-
-    public interface IQuery<T> : IQuery
-    {
-
+        public string Translate(string key);
     }
 }

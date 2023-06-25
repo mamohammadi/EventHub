@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Abstractions.Commands
+namespace Event.Application.Queries.Abstractions
 {
-    public interface ICommand
+    public interface IQuery
     {
+    }
+
+    public interface IQuery<T> : IQuery
+    {
+
     }
 }

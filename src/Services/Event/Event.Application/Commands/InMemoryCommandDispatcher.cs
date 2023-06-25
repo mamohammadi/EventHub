@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Event.Application.Commands.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Event.Common.Abstractions.Commands
 {

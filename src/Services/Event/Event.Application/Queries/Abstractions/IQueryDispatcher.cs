@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Abstractions.Queries
+namespace Event.Application.Queries.Abstractions
 {
     public interface IQueryDispatcher
     {

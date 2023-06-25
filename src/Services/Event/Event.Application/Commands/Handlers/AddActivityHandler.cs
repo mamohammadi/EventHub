@@ -1,15 +1,8 @@
-﻿using Event.Application.Exceptions;
-using Event.Application.Extensions;
-using Event.Application.Services;
-using Event.Common.Abstractions.Commands;
-using Event.Common.Abstractions.Services;
+﻿using Event.Application.Commands.Abstractions;
+using Event.Application.Exceptions;
+using Event.Common.Services;
 using Event.Domain.Repositories;
 using Event.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Event.Application.Commands.Handlers
 {

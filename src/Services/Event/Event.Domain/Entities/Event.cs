@@ -1,13 +1,8 @@
-﻿using Event.Common.Abstractions.Services;
+﻿using Event.Common.Services;
 using Event.Domain.Events;
 using Event.Domain.Exceptions;
 using Event.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Event.Domain.Entities
 {

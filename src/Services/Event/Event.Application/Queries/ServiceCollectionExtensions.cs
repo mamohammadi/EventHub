@@ -1,19 +1,21 @@
-﻿using Event.Common.Abstractions.Commands;
+﻿using Event.Application.Commands.Abstractions;
+using Event.Application.Queries.Abstractions;
+using Event.Common.Abstractions.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Event.Common.Commands
+namespace Event.Application.Queries
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddCommandHandlers(this IServiceCollection services)
+        public static IServiceCollection AddQueryHandlers(this IServiceCollection services)
         {
             var assemblyToSearch = Assembly.GetCallingAssembly();
 
             services.AddSingleton<ICommandDispatcher, InMemoryCommandDispatcher>();
 
             return services.Scan(s => s.FromAssemblies(assemblyToSearch)
-                           .AddClasses(c => c.AssignableTo(typeof(ICommandHandler<>)))
+                           .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
                            .AsImplementedInterfaces()
                            .WithScopedLifetime());
         }

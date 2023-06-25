@@ -1,4 +1,5 @@
-﻿using Event.Application.Commands.WriteModels;
+﻿using Event.Application.Commands.Abstractions;
+using Event.Application.Commands.WriteModels;
 using Event.Common.Abstractions.Commands;
 using System;
 using System.Collections.Generic;

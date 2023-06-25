@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Event.Common.Abstractions.Queries
+namespace Event.Application.Queries.Abstractions
 {
-    public interface IQueryHandler<TQuery, TResult> where TQuery: class, IQuery<TResult> 
+    public interface IQueryHandler<TQuery, TResult> where TQuery : class, IQuery<TResult>
     {
         Task<TResult> HandleAsync(TQuery query);
     }
