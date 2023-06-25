@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Event.Infrastructure.EF.Write
 {
-    internal sealed class WriteDbContext : DbContext
+    public sealed class WriteDbContext : DbContext
     {
-        public DbSet<EventWriteModel> Events { get; set; }
+        internal DbSet<EventWriteModel> Events { get; set; }
 
         public WriteDbContext(DbContextOptions<DbContext> options) : base(options) { }
 

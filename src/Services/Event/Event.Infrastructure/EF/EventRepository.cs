@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Event.Infrastructure.EF
 {
-    internal sealed class EventRepository : IEventRepository
+    public sealed class EventRepository : IEventRepository
     {
         private readonly IEventReadRepository eventReadRepository;
         private readonly IEventWriteRepository eventWriteRepository;

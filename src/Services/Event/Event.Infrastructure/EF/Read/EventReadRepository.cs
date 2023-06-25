@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Event.Infrastructure.EF.Read
 {
-    internal class EventReadRepository : IEventReadRepository
+    public class EventReadRepository : IEventReadRepository
     {
         private readonly ReadDbContext readDbContext;
         private readonly IEventFactory eventFactory;

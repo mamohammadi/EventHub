@@ -9,12 +9,15 @@ namespace Event.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var services = builder.Services;
 
             // Add services to the container.
-            builder.Services.AddApplication();
 
+            services.AddApplication();
+            services.AddInfrastructure(builder.Configuration);
+            services.AddApplicationInit();
 
-            builder.Services.AddAuthorization();
+            services.AddAuthorization();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Event.Infrastructure.EF.Read
 {
-    internal sealed class ReadDbContext : DbContext
+    public sealed class ReadDbContext : DbContext
     {
-        public DbSet<EventReadModel> Events { get; set; }
+        internal DbSet<EventReadModel> Events { get; set; }
 
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options) { }
 

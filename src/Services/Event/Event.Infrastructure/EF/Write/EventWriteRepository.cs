@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Event.Infrastructure.EF.Write
 {
-    internal class EventWriteRepository : IEventWriteRepository
+    public class EventWriteRepository : IEventWriteRepository
     {
         private readonly WriteDbContext writeDbContext;
         private readonly DbSet<EventWriteModel> events;
