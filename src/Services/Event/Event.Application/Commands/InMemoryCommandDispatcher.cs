@@ -1,9 +1,9 @@
 ﻿using Event.Application.Commands.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Event.Common.Abstractions.Commands
+namespace Event.Application.Commands
 {
-    internal class InMemoryCommandDispatcher : ICommandDispatcher
+    public class InMemoryCommandDispatcher : ICommandDispatcher
     {
         private readonly IServiceProvider serviceProvider;
 

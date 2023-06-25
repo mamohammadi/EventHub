@@ -1,8 +1,9 @@
-﻿using Event.Application.Commands.Abstractions;
+﻿using Event.Application.Commands;
+using Event.Application.Commands.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Event.Application.Commands
+namespace Event.API.Extensions
 {
     public static class ServiceCollectionExtensions
     {

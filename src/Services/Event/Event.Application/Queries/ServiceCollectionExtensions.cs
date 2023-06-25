@@ -1,6 +1,6 @@
-﻿using Event.Application.Commands.Abstractions;
+﻿using Event.Application.Commands;
+using Event.Application.Commands.Abstractions;
 using Event.Application.Queries.Abstractions;
-using Event.Common.Abstractions.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
