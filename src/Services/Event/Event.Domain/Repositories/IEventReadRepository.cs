@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace Event.Domain.Repositories
 {
-    public interface IEventRepository : IEventReadRepository, IEventWriteRepository { }
+    public interface IEventReadRepository
+    {
+        Task<Entities.Event?> GetAsync(Guid Id);
+    }
 }

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Event.Application.Queries
 {
-    internal sealed class InMemoryQueryDispatcher : IQueryDispatcher
+    public sealed class InMemoryQueryDispatcher : IQueryDispatcher
     {
         private readonly IServiceProvider serviceProvider;
 
@@ -16,8 +16,6 @@ namespace Event.Application.Queries
         {
             using(var scope = serviceProvider.CreateScope())
             {
-                //var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));
-                //var handler = scope.ServiceProvider.GetRequiredService(handlerType);
                 var handler = scope.ServiceProvider.GetRequiredService<IQueryHandler<IQuery<TResult>, TResult>>();
                 return handler.HandleAsync(query);
             }

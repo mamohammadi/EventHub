@@ -20,6 +20,7 @@ namespace Event.Domain.Entities
         public Location Location { get; private set; }
         
         private readonly ICollection<Activity> activities = new List<Activity>();
+        public IEnumerable<Activity> Activities => activities;
 
         internal Event(string title, DateTime date, string description, Location location)
         {
