@@ -24,7 +24,7 @@ namespace Event.Application.Commands.Handlers
                 throw new EventNotfoundException(translationService);
             }
 
-            @event.RemoveActivity(command.Name, translationService);
+            @event.RemoveActivity(command.Name);
 
             await eventRepository.UpdateAsync(@event);
         }

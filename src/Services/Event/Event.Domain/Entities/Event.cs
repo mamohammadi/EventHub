@@ -22,19 +22,18 @@ namespace Event.Domain.Entities
         private readonly ICollection<Activity> activities = new List<Activity>();
         public IEnumerable<Activity> Activities => activities;
 
-        internal Event(string title, DateTime date, string description, Location location)
+        private ITranslationService translationService;
+
+        internal Event(string title, DateTime date, string description, Location location, ITranslationService translationService)
         {
             Title = title;
             Date = date;
             Description = description;
             Location = location;
+            this.translationService = translationService;
         }
 
-        public Event() 
-        {
-        }
-
-        public void AddActivity(Activity activity, ITranslationService translationService)
+        public void AddActivity(Activity activity)
         {
             if(activities.Any(a => a.Name == activity.Name))
             {
@@ -44,14 +43,14 @@ namespace Event.Domain.Entities
             AddDomainEvent(new ActivityAdded(this, activity));
         }
 
-        public void RemoveActivity(string name, ITranslationService translationService)
+        public void RemoveActivity(string name)
         {
-            var activity = GetActivity(name, translationService);
+            var activity = GetActivity(name);
             activities.Remove(activity);
             AddDomainEvent(new ActivityRemoved(this, activity));
         }
 
-        public Activity GetActivity(string name, ITranslationService translationService)
+        public Activity GetActivity(string name)
         {
             var activity = activities.FirstOrDefault(a => a.Name == name);
             if(activity == null)

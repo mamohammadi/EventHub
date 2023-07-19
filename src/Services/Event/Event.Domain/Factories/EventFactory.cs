@@ -1,4 +1,5 @@
-﻿using Event.Domain.ValueObjects;
+﻿using Event.Common.Services;
+using Event.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,14 @@ namespace Event.Domain.Factories
 {
     public sealed class EventFactory : IEventFactory
     {
+        private readonly ITranslationService translationService;
+
+        public EventFactory(ITranslationService translationService)
+        {
+            this.translationService = translationService;
+        }
+
         public Entities.Event Create(string title, DateTime date, string description, Location location)
-            => new Entities.Event(title, date, description, location);
+            => new Entities.Event(title, date, description, location, translationService);
     }
 }

@@ -1,5 +1,7 @@
 
 using Event.API.Extensions;
+using Event.Application.Queries;
+using Event.Application.Queries.Abstractions;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Event.API
@@ -36,9 +38,9 @@ namespace Event.API
 
             app.UseAuthorization();
 
-            app.MapGet("/weatherforecast", (HttpContext httpContext) =>
+            app.MapGet("/event", (HttpContext httpContext, IQueryDispatcher queryDispatcher) =>
             {
-                return Results.Ok();
+                return Results.Ok(queryDispatcher.QueryAsync(new GetEvent() { Id = Guid.NewGuid() }));
             })
             .WithName("GetWeatherForecast")
             .WithOpenApi();

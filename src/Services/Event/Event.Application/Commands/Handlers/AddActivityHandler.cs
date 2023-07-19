@@ -26,7 +26,7 @@ namespace Event.Application.Commands.Handlers
             }
 
             var activity = new Activity(command.Name, command.Capacity);
-            @event.AddActivity(activity, translationService);
+            @event.AddActivity(activity);
 
             await eventRepository.CreateAsync(@event);
         }
