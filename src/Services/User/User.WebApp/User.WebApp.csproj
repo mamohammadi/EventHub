@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>90055606-b91c-4d13-a639-75b49b06e815</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.3.2" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.0" />
+
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+		<PackageReference Include="Serilog.AspNetCore" Version="6.0.0" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+	</ItemGroup>
+</Project>

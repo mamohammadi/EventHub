@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event.Infrastructure", "Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event.Common", "Services\Event\Event.Common\Event.Common.csproj", "{60A6A39C-62FB-4BE3-9EE8-E46CF12D8CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventUnitTests", "Services\Event\Tests\EventUnitTests\EventUnitTests.csproj", "{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventUnitTests", "Services\Event\Tests\EventUnitTests\EventUnitTests.csproj", "{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.WebApp", "Services\User\User.WebApp\User.WebApp.csproj", "{5C085445-2556-4A49-B68B-4D93FA622144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C085445-2556-4A49-B68B-4D93FA622144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C085445-2556-4A49-B68B-4D93FA622144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C085445-2556-4A49-B68B-4D93FA622144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C085445-2556-4A49-B68B-4D93FA622144}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{887AD67B-164C-4CA8-892B-DE161E290676} = {4981998E-D0A2-4CF0-BD35-B06CABD676F4}
 		{60A6A39C-62FB-4BE3-9EE8-E46CF12D8CDB} = {4981998E-D0A2-4CF0-BD35-B06CABD676F4}
 		{7FA1ADDF-4469-4353-BE63-4D33C54ED72F} = {5AAD59D0-4D2D-4D86-A083-9A8A4F8EEF51}
+		{5C085445-2556-4A49-B68B-4D93FA622144} = {4AD36AA5-5104-44E5-A822-301D47C61425}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAC4FEB2-22A0-4FBC-A6C2-23DDA717DF49}
