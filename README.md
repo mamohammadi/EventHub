@@ -10,7 +10,7 @@
  * Docker
 
 # Build status
-![Status](https://github.com/mamohammadi/EventHub/blob/master/.github/workflows/docker-compose.yml/badge.svg?branch=master&event=push)
+![Status](https://github.com/mamohammadi/EventHub/actions/workflows/docker-compose.yml/badge.svg?branch=master&event=push)
 
 Event Service: This microservice handles event creation, management, and retrieval. It allows users to create events, provide event details (such as date, time, location, and description), manage registrations, and provide event-related updates.
 
