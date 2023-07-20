@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  eventhub.event:
+    image: ${DOCKER_REGISTRY-}eventhub.event
+    build:
+      context: Services/Event
+      dockerfile: Dockerfile
+
+  eventhub.user:
+    image: ${DOCKER_REGISTRY-}eventhub.user
+    build:
+      context: Services/User
+      dockerfile: Dockerfile
+

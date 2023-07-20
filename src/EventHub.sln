@@ -12,8 +12,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3D911F4D-D366-4298-A682-D26F8FCB5BB2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Event", "Event", "{4981998E-D0A2-4CF0-BD35-B06CABD676F4}"
+	ProjectSection(SolutionItems) = preProject
+		Services\Event\Dockerfile = Services\Event\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{4AD36AA5-5104-44E5-A822-301D47C61425}"
+	ProjectSection(SolutionItems) = preProject
+		Services\User\Dockerfile = Services\User\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{984F2B10-C8FE-4EBD-BFE2-C9676A043717}"
 EndProject
@@ -40,6 +46,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventUnitTests", "Services\Event\Tests\EventUnitTests\EventUnitTests.csproj", "{7FA1ADDF-4469-4353-BE63-4D33C54ED72F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.WebApp", "Services\User\User.WebApp\User.WebApp.csproj", "{5C085445-2556-4A49-B68B-4D93FA622144}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{317B26AD-8D97-41B5-954B-9A010E4D27AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +83,10 @@ Global
 		{5C085445-2556-4A49-B68B-4D93FA622144}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C085445-2556-4A49-B68B-4D93FA622144}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C085445-2556-4A49-B68B-4D93FA622144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317B26AD-8D97-41B5-954B-9A010E4D27AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317B26AD-8D97-41B5-954B-9A010E4D27AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317B26AD-8D97-41B5-954B-9A010E4D27AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317B26AD-8D97-41B5-954B-9A010E4D27AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

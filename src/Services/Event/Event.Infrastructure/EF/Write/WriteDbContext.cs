@@ -12,7 +12,7 @@ namespace Event.Infrastructure.EF.Write
     {
         internal DbSet<EventWriteModel> Events { get; set; }
 
-        public WriteDbContext(DbContextOptions<DbContext> options) : base(options) { }
+        public WriteDbContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

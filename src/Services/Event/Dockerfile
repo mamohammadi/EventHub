@@ -10,14 +10,26 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Event.API/Event.API.csproj", "Event.API/"]
-RUN dotnet restore "Event.API/Event.API.csproj"
+
+# Copy and restore the projects
 COPY . .
-WORKDIR "/src/Event.API"
-RUN dotnet build "Event.API.csproj" -c Release -o /app/build
+RUN dotnet restore "Event.API/Event.API.csproj"
+RUN dotnet restore "Event.Application/Event.Application.csproj"
+RUN dotnet restore "Event.Common/Event.Common.csproj"
+RUN dotnet restore "Event.Domain/Event.Domain.csproj"
+RUN dotnet restore "Event.Infrastructure/Event.Infrastructure.csproj"
+
+# Restore the test project
+RUN dotnet restore "Tests/EventUnitTests/EventUnitTests.csproj"
+
+# Build
+RUN dotnet build "Event.API/Event.API.csproj" -c Release -o /app/build
+
+# Run unit tests
+RUN dotnet test "Tests/EventUnitTests/EventUnitTests.csproj"
 
 FROM build AS publish
-RUN dotnet publish "Event.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Event.API/Event.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
