@@ -19,7 +19,3 @@ User Service: This microservice focuses on user management functionalities, incl
 Notification Service: This microservice handles event-related notifications, such as event reminders, updates, and announcements. It can utilize email notifications, push notifications, or any other preferred communication channels.
 
 Analytics Service: This microservice provides analytics and reporting capabilities for events. It collects and analyzes data related to event attendance, user engagement, and other relevant metrics, offering insights to event organizers.
-
-Dockerization: Containerize each microservice using Docker, providing individual Dockerfiles for each service. Specify the dependencies, configurations, and instructions to build and run each microservice within their respective Dockerfiles.
-
-Container Orchestration: Utilize Docker Compose or Kubernetes for container orchestration. Define the necessary services, network configurations, and inter-service communication within the orchestration tool for easy deployment and scalability.
