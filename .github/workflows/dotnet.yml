@@ -14,4 +14,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: docker-compose build
+      working-directory: src
+      run: docker-compose -f src/ build
