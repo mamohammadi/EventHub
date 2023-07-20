@@ -9,6 +9,9 @@
  * Message Broker (RabbitMQ)
  * Docker
 
+# Build status
+![Status](https://github.com/mamohammadi/EventHub/blob/master/.github/workflows/docker-compose.yml/badge.svg?branch=master)
+
 Event Service: This microservice handles event creation, management, and retrieval. It allows users to create events, provide event details (such as date, time, location, and description), manage registrations, and provide event-related updates.
 
 User Service: This microservice focuses on user management functionalities, including user registration, authentication, and profile management. It provides endpoints for user-related operations and can integrate with the Event Service for user-specific event actions.
