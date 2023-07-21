@@ -11,16 +11,22 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-# Copy and restore the projects
-COPY . .
+# Restore
+COPY ["Event.API/Event.API.csproj", "Event.API/"]
+COPY ["Event.Application/Event.Application.csproj", "Event.Application/"]
+COPY ["Event.Common/Event.Common.csproj", "Event.Common/"]
+COPY ["Event.Domain/Event.Domain.csproj", "Event.Domain/"]
+COPY ["Event.Infrastructure/Event.Infrastructure.csproj", "Event.Infrastructure/"]
 RUN dotnet restore "Event.API/Event.API.csproj"
 RUN dotnet restore "Event.Application/Event.Application.csproj"
 RUN dotnet restore "Event.Common/Event.Common.csproj"
 RUN dotnet restore "Event.Domain/Event.Domain.csproj"
 RUN dotnet restore "Event.Infrastructure/Event.Infrastructure.csproj"
-
-# Restore the test project
+COPY ["Tests/EventUnitTests/EventUnitTests.csproj", "Tests/EventUnitTests/"]
 RUN dotnet restore "Tests/EventUnitTests/EventUnitTests.csproj"
+
+# Copy all source codes
+COPY . .
 
 # Build
 RUN dotnet build "Event.API/Event.API.csproj" -c Release -o /app/build
@@ -28,9 +34,11 @@ RUN dotnet build "Event.API/Event.API.csproj" -c Release -o /app/build
 # Run unit tests
 RUN dotnet test "Tests/EventUnitTests/EventUnitTests.csproj"
 
+# Publish
 FROM build AS publish
 RUN dotnet publish "Event.API/Event.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
+# Final image using runtime assemblies and publish artifacts
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
