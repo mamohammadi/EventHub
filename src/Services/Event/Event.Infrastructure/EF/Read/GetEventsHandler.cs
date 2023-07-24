@@ -7,18 +7,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Event.Application.Queries
 {
-    public class GetEventHandler : IQueryHandler<GetEvent, EventDTO>, IQueryHandler<IQuery<EventDTO>, EventDTO>
+    public class GetEventsHandler : IQueryHandler<GetEvents, List<EventDTO>>, IQueryHandler<IQuery<List<EventDTO>>, List<EventDTO>>
     {
         private readonly DbSet<EventReadModel> events;
 
-        public GetEventHandler(ReadDbContext dbContext)
+        public GetEventsHandler(ReadDbContext dbContext)
         {
             this.events = dbContext.Events;
         }
 
-        public Task<EventDTO> HandleAsync(GetEvent query)
+        public Task<List<EventDTO>> HandleAsync(GetEvents query)
         {
-            return events.Where(e => e.Id == query.Id)
+            return events
                 .Select(e => new EventDTO
                 {
                     Id = e.Id,
@@ -28,12 +28,12 @@ namespace Event.Application.Queries
                     Location = new Domain.ValueObjects.Location(e.Location.Country, e.Location.City, e.Location.AddressLine1)
                 })
                 .AsNoTracking()
-                .SingleOrDefaultAsync()!;
+                .ToListAsync();
         }
 
-        public Task<EventDTO> HandleAsync(IQuery<EventDTO> query)
+        public Task<List<EventDTO>> HandleAsync(IQuery<List<EventDTO>> query)
         {
-            return HandleAsync((GetEvent)query);
+            return HandleAsync((GetEvents)query);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using Event.Application.Queries.Abstractions;
+﻿using Event.Application.DTO;
+using Event.Application.Queries.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 
 namespace Event.Application.Queries
 {
@@ -12,12 +14,12 @@ namespace Event.Application.Queries
             this.serviceProvider = serviceProvider;
         }
 
-        public Task<TResult> QueryAsync<TResult>(IQuery<TResult> query)
+        public async Task<TResult> QueryAsync<TResult>(IQuery<TResult> query)
         {
-            using(var scope = serviceProvider.CreateScope())
+            using (var scope = serviceProvider.CreateScope())
             {
                 var handler = scope.ServiceProvider.GetRequiredService<IQueryHandler<IQuery<TResult>, TResult>>();
-                return handler.HandleAsync(query);
+                return await handler.HandleAsync(query);
             }
         }
     }

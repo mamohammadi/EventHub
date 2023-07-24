@@ -5,6 +5,7 @@ using Event.Application.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Event.Application.Commands.Abstractions;
 using Event.Application.Commands;
+using Event.Application.DTO;
 
 namespace Event.API.Endpoints
 {
@@ -15,16 +16,16 @@ namespace Event.API.Endpoints
 
         public static void MapV1(this IEndpointRouteBuilder routeBuilder, ApiVersionSet apiVersionSet)
         {
-            routeBuilder.MapGet($"{VERSION_URL}/events", (IQueryDispatcher queryDispatcher) =>
+            routeBuilder.MapGet($"{VERSION_URL}/events", async (IQueryDispatcher queryDispatcher) =>
             {
-                return Results.Ok(queryDispatcher.QueryAsync(new GetEvents()));
+                return Results.Ok(await queryDispatcher.QueryAsync(new GetEvents()));
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
 
-            routeBuilder.MapGet($"{VERSION_URL}/event", (IQueryDispatcher queryDispatcher) =>
+            routeBuilder.MapGet($"{VERSION_URL}/event", async (IQueryDispatcher queryDispatcher) =>
             {
-                return Results.Ok(queryDispatcher.QueryAsync(new GetEvent() { Id = Guid.NewGuid() }));
+                return Results.Ok(await queryDispatcher.QueryAsync(new GetEvent() { Id = Guid.NewGuid() }));
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);

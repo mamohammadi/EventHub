@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Event.Infrastructure.EF
 {
-    internal sealed class EventReadService : IEventReadService
+    public sealed class EventReadService : IEventReadService
     {
         private readonly DbSet<EventReadModel> events;
 

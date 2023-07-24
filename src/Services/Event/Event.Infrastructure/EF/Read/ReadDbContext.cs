@@ -13,7 +13,7 @@ namespace Event.Infrastructure.EF.Read
     {
         internal DbSet<EventReadModel> Events { get; set; }
 
-        public ReadDbContext(DbContextOptions options) : base(options) { }
+        public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

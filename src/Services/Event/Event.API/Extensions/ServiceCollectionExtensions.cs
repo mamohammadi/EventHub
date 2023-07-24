@@ -2,6 +2,7 @@
 using Event.Application.Commands.Abstractions;
 using Event.Application.Queries;
 using Event.Application.Queries.Abstractions;
+using Event.Application.Services;
 using Event.Common.Services;
 using Event.Domain.Factories;
 using Event.Domain.Repositories;
@@ -29,11 +30,9 @@ namespace Event.API.Extensions
 
         private static IServiceCollection AddCommandHandlers(this IServiceCollection services)
         {
-            var assemblyToSearch = Assembly.GetCallingAssembly();
-
             services.AddSingleton<ICommandDispatcher, InMemoryCommandDispatcher>();
 
-            return services.Scan(s => s.FromAssemblies(assemblyToSearch)
+            return services.Scan(s => s.FromApplicationDependencies()
                            .AddClasses(c => c.AssignableTo(typeof(ICommandHandler<>)))
                            .AsImplementedInterfaces()
                            .WithScopedLifetime());
@@ -41,14 +40,14 @@ namespace Event.API.Extensions
 
         private static IServiceCollection AddQueryHandlers(this IServiceCollection services)
         {
-            var assemblyToSearch = Assembly.GetCallingAssembly();
+            services.AddSingleton<IQueryDispatcher, InMemoryQueryDispatcher>();
 
-            services.AddSingleton<ICommandDispatcher, InMemoryCommandDispatcher>();
-
-            return services.Scan(s => s.FromAssemblies(assemblyToSearch)
+            services.Scan(s => s.FromApplicationDependencies()
                            .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
                            .AsImplementedInterfaces()
                            .WithScopedLifetime());
+
+            return services;
         }
 
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
@@ -64,6 +63,7 @@ namespace Event.API.Extensions
                         optionsBuilder.UseSqlServer(connectionString))
                     .AddDbContext<WriteDbContext>(optionsBuilder =>
                         optionsBuilder.UseSqlServer(connectionString))
+                    .AddScoped<IEventReadService, EventReadService>()
                     .AddScoped<IEventReadRepository, EventReadRepository>()
                     .AddScoped<IEventWriteRepository, EventWriteRepository>()
                     .AddScoped<IEventRepository, EventRepository>();

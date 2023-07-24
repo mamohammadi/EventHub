@@ -10,7 +10,7 @@ namespace Event.Application.Queries.Abstractions
     {
     }
 
-    public interface IQuery<T> : IQuery
+    public interface IQuery<in T> : IQuery
     {
 
     }
