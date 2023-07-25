@@ -30,30 +30,34 @@ namespace Event.API.Endpoints
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
 
-            routeBuilder.MapPost($"{VERSION_URL}/event", (CreateEvent command, ICommandDispatcher commandDispatcher) =>
+            routeBuilder.MapPost($"{VERSION_URL}/event", async (CreateEvent command, ICommandDispatcher commandDispatcher) =>
             {
-                return Results.Ok(commandDispatcher.DispatchAsync(command));
+                await commandDispatcher.DispatchAsync(command);
+                return Results.Ok();
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
 
-            routeBuilder.MapDelete($"{VERSION_URL}/event", ([AsParameters] RemoveEvent command, ICommandDispatcher commandDispatcher) =>
+            routeBuilder.MapDelete($"{VERSION_URL}/event", async ([AsParameters] RemoveEvent command, ICommandDispatcher commandDispatcher) =>
             {
-                return Results.Ok(commandDispatcher.DispatchAsync(command));
+                await commandDispatcher.DispatchAsync(command);
+                return Results.Ok();
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
 
-            routeBuilder.MapPost($"{VERSION_URL}/add-activity", (AddActivity command, ICommandDispatcher commandDispatcher) =>
+            routeBuilder.MapPost($"{VERSION_URL}/add-activity", async (AddActivity command, ICommandDispatcher commandDispatcher) =>
             {
-                return Results.Ok(commandDispatcher.DispatchAsync(command));
+                await commandDispatcher.DispatchAsync(command);
+                return Results.Ok();
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
 
-            routeBuilder.MapDelete($"{VERSION_URL}/remove-activity", ([AsParameters] RemoveActivity command, ICommandDispatcher commandDispatcher) =>
+            routeBuilder.MapDelete($"{VERSION_URL}/remove-activity", async ([AsParameters] RemoveActivity command, ICommandDispatcher commandDispatcher) =>
             {
-                return Results.Ok(commandDispatcher.DispatchAsync(command));
+                await commandDispatcher.DispatchAsync(command);
+                return Results.Ok();
             })
             .WithApiVersionSet(apiVersionSet)
             .MapToApiVersion(API_VERSION);
